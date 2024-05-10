@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerenciadorProdutoresApp.Views.Sobre.SobrePage">
+    <VerticalStackLayout Padding="15,0,15,0">
+        <Label
+            Text="Sobre"
+            HorizontalOptions="CenterAndExpand"
+            FontSize="26"
+            FontAttributes="Bold"/>
+        
+        <Label 
+            Text="Primeiro aplicativo desenvolvido utilizando persistência de dados."
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand"
+            FontSize="18"
+            Padding="0,10"/>
+        
+        <Label 
+            Text="O aplicativo oferece as seguintes funcionalidades:"
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand"
+            FontSize="18"
+            Padding="0,10"/>
+        
+        <Label 
+            Text="- Cadastro de Produtor"
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand"
+            FontSize="18"/>
+        
+        <Label 
+            Text="- Validação de campos vazios ao adicionar um novo produtor"
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand"
+            FontSize="18"/>
+        
+        <Label 
+            Text="- Listagem de produtores cadastrados"
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand"
+            FontSize="18"/>
+        
+        <Label 
+            Text="- Exclusão de cadastro"
+            VerticalOptions="Center" 
+            HorizontalOptions="StartAndExpand"
+            FontSize="18"/>   
+
+    </VerticalStackLayout>
+</ContentPage>

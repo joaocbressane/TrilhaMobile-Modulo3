@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:GerenciadorProdutoresApp.Views.Produtor.Lista"                          
+             xmlns:model="clr-namespace:GerenciadorProdutoresApp.Models.Produtor"               
+             x:Class="GerenciadorProdutoresApp.Views.Produtor.Lista.ListaProdutoresPage"
+             x:DataType="viewmodel:ListaProdutorPageViewModel"            
+             Title="Lista de Produtores">
+    
+    <Grid RowDefinitions="100, Auto, *"
+        ColumnDefinitions=".75*, .25*"
+        Padding="10"
+        RowSpacing="10"
+        ColumnSpacing="10">       
+        
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2"                                                                
+                        ItemsSource="{Binding ProdutorList}"                            
+                        SelectionMode="None" >       
+            
+            <CollectionView.ItemTemplate >                
+                <DataTemplate x:DataType="model:ProdutorModel" >
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                    BackgroundColor="Red"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ListaProdutorPageViewModel}}, Path=DeletarProdutorCommand}"
+                                    CommandParameter="{Binding .}">
+                                </SwipeItem>     
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Grid Padding="0,5">
+                            <Frame>                              
+                                <Label Text="{Binding Nome}" FontSize="16"/>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>            
+        </CollectionView>
+    </Grid>
+</ContentPage>
